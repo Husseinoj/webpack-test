@@ -18,7 +18,14 @@ module.exports =  {
                         presets: ['@babel/preset-env']
                     }
                 }
-            }
+            },
+            {
+                test: /\.css$/,
+                use: [ // order of loader is important
+                    { loader: 'style-loader' }, // output our css into a <style> tag in the html document
+                    { loader: 'css-loader' } // parse css into js and resolves any dependencies.
+                ],
+              },
         ]
     },
     plugins:[
