@@ -25,7 +25,15 @@ module.exports =  {
                     { loader: 'style-loader' }, // output our css into a <style> tag in the html document
                     { loader: 'css-loader' } // parse css into js and resolves any dependencies.
                 ],
-              },
+            },
+            {
+                test: /\.(png|jpg|gif)$/,
+                use: [
+                  {
+                    loader: 'file-loader' //The file-loader resolves import/require() on a file into a url and emits the file into the output directory.
+                  },
+                ],
+            },
         ]
     },
     plugins:[
