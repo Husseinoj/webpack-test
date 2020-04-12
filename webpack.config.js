@@ -40,5 +40,9 @@ module.exports =  {
         new htmlWebpackPlugin({
             title:"Output Message"
         })
-    ]
+    ],
+    devServer: {
+        contentBase: './dist',
+        open: true
+    }
 }
